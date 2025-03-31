@@ -1,0 +1,29 @@
+@use './functions' as u;
+
+@mixin scrollbar(){
+	scrollbar-gutter: stable;
+	
+	&::-webkit-scrollbar {
+		width: u.rem(8);
+	}
+
+	&::-webkit-scrollbar-track {
+		border-radius: 10px;
+		
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	&:hover{
+		&::-webkit-scrollbar-thumb{
+			background: rgba(255, 255, 255, 0.3);
+		}
+	}
+}

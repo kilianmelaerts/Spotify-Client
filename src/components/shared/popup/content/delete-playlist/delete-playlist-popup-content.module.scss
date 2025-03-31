@@ -1,0 +1,44 @@
+@use '../../../../../styles/utils/index' as u;
+
+.root{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: u.rem(40);
+}
+
+.title-container{
+	width: 60%;
+	display: flex;
+	justify-content: center;
+
+	&>p{
+		font-size: u.rem(32);
+		// color: u.$primary-green;
+	}
+}
+
+.form{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: u.rem(20);
+}
+
+.btn{
+	background-color: u.$primary-green;
+	color: u.$primary-white;
+	padding: u.rem(10);
+	border: solid u.$primary-green;
+	transition: transform 0.1s ease-in-out;
+	@include u.border-radius(large);
+
+	&:hover{
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+}

@@ -1,0 +1,150 @@
+@use '../../styles/utils/index' as u;
+
+.track-container{
+	display: grid;
+	grid-template-columns: 1fr u.rem(400) u.rem(250) 1fr u.rem(60);
+	gap: u.rem(20);
+	align-items: center;
+	padding: u.rem(10);
+	@include u.border-radius(default);
+	width: 100%;
+
+	&:hover{
+		background-color: u.$transparant-black;
+	}
+}
+
+.cover{
+	height: u.rem(50);
+	width: u.rem(50);
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	@include u.border-radius(default);
+}
+
+.track-name{
+	font-size: u.rem(20);
+	white-space: nowrap;
+	display: -webkit-box;
+	// Max 2 lines
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+	white-space: normal;
+}
+
+.artist-container{
+	display: flex;
+}
+
+.artists{
+	font-size: u.rem(12);
+	color: u.$secondary-grey;
+	white-space: nowrap;
+	display: -webkit-box;
+	// Max 1 line
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+	white-space: normal;
+}
+
+.track-name-and-artist-container{
+	display: flex;
+	flex-direction: column;
+	gap: u.rem(10);
+}
+
+.album-name{
+	display: flex;
+	justify-content: start;
+	white-space: nowrap;
+	display: -webkit-box;
+	// Max 1 line
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+	white-space: normal;
+}
+
+.release-date{
+	display: flex;
+	justify-content: start;
+}
+
+.delete-track-btn-container{
+	display: flex;
+	justify-content: center;
+}
+
+.delete-track-button{
+	background-color: u.$primary-grey;
+	border: none;
+}
+
+// FOUND TRACK
+.found-track-container{
+	display: grid;
+	grid-template-columns: auto u.rem(125) u.rem(125) auto;
+	gap: u.rem(20);
+	padding: u.rem(10);
+	align-items: center;
+	@include u.border-radius(default);
+
+	&:hover{
+		background-color: u.$transparant-black;
+	}
+}
+
+.found-track-cover{
+	height: u.rem(50);
+	width: u.rem(50);
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	@include u.border-radius(default);
+}
+
+.found-track-name{
+	font-size: u.rem(16);
+	display: -webkit-box;
+	// Max 2 lines
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.found-track-artist-container{
+	min-width: u.rem(100);
+}
+
+.found-track-artist{
+	font-size: u.rem(12);
+	color: u.$secondary-grey;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.found-track-album-name{
+	font-size: u.rem(12);
+	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.add-track-btn-container{
+	display: flex;
+	justify-content: center;
+}
+
+.icon{
+	height: u.rem(20);
+	width: u.rem(20);
+}
+

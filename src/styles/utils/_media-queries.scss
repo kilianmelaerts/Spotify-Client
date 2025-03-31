@@ -1,0 +1,18 @@
+@use './functions' as f;
+
+// Define breakpoint
+$width-breakpoints: (
+	"phone": 370, 
+	"tablet": 600,
+	"desktop_s": 1400, // Desktop small => macbook pro 13' = 1440px
+	"desktop": 1800, 
+	"hr": 2048, // High resolution
+);
+
+@mixin mqw-from($breakPoint){
+	$pixels: map.get($map: $width-breakpoints, $key: $breakPoint);
+	
+	@media (min-width: f.em($pixels)) {
+		@content;
+	}
+}

@@ -1,0 +1,53 @@
+@use '../../styles/utils/index' as u;
+
+.root{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	@include u.border-radius(default);
+	overflow: hidden;
+	background: u.$transparant-background-dark;
+	backdrop-filter: blur(12px);
+  	-webkit-backdrop-filter: blur(12px);
+}
+
+.create-playlist-header{
+	background-color: u.$primary-black;
+	display: flex;
+	justify-content: center;
+	gap: u.rem(20);
+	padding: u.rem(20);
+	align-items: center;
+}
+
+.create-playlist-btn{
+	padding: u.rem(10);
+	background-color: u.$primary-grey;
+	transition: transform 0.2s ease-in-out;
+	
+	@include u.border-radius(large);
+
+	&>p{
+		font-size: u.rem(16);
+	}
+
+	&:hover{
+		background-color: u.$transparant-black;
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+}
+
+.playlists-container{
+	overflow: auto;
+	white-space: nowrap;
+	
+	@include u.scrollbar();
+}
+
+.playlist-container{
+	// left padding to 0 => Already padding available 
+	// because of the scrollbar
+	padding: u.rem(10) 0 u.rem(10) u.rem(10);
+}

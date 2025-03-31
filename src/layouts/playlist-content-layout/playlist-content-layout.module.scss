@@ -1,0 +1,49 @@
+@use '../../styles/utils/index' as u;
+
+.root{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	@include u.border-radius(default);
+	overflow: hidden;
+}
+
+.header{
+	background-color: u.$primary-black;
+	display: grid;
+	align-items: center;
+	// 28px instead of 20px on the right to accomodate for the extra padding given by the scrollbar (8px).
+	// Hacky but it works.
+	padding: u.rem(30) u.rem(18) u.rem(30) u.rem(20);
+
+	// Added extra fraction to accomodate to delete btn area
+	grid-template-columns: 1fr u.rem(400) u.rem(250) 1fr u.rem(60);
+	gap: u.rem(20);
+}
+
+.tracks-container{
+	overflow: auto;
+	white-space: nowrap;
+	background: u.$transparant-background-dark;
+	backdrop-filter: blur(u.rem(12));
+  	-webkit-backdrop-filter: blur(u.rem(12));
+	border-radius: 0 0 u.rem(10) u.rem(10);
+
+	@include u.scrollbar();
+}
+
+.album-container{
+	display: flex;
+	justify-content: start;
+}
+
+.release-date-container{
+	display: flex;
+	justify-content: start;
+}
+
+.track-item-container{
+	padding: u.rem(10) 0 u.rem(10) u.rem(10);
+}
+

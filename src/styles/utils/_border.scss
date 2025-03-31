@@ -1,0 +1,14 @@
+@use "./functions" as f;
+@use "sass:map";
+
+$border-radius: (
+	default: 10,
+	large: 200,
+);
+
+@mixin border-radius($key){
+	& {
+		$value: map.get($map: $border-radius, $key: $key);
+		border-radius: f.rem($value);
+	}
+}

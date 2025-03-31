@@ -1,0 +1,52 @@
+@use '../../../../styles/utils/index' as u;
+
+.root{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	// Ensure it stay on top of content
+	z-index: 1000;
+}
+
+.popup-container{
+	width: 60vw;
+  	height: 60vh;
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: u.rem(20);
+	background: linear-gradient(135deg, u.$primary-black 0%, u.$primary-grey 100%);
+	border: u.rem(1) solid u.$primary-grey;
+	box-shadow: 0 0 u.rem(20) rgba(0, 0, 0, 1);
+
+	@include u.border-radius(default);
+}
+
+.close-btn-container{
+	position: relative;
+	width: 100%;
+}
+
+.close-btn{
+	position: absolute;
+	right: 0;
+	height: u.rem(30);
+	width: u.rem(30);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: u.$secondary-grey;
+	color: u.$primary-black;
+	transition: transform 0.2s ease-in-out;
+
+	@include u.border-radius(large);
+
+	&:hover{
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+
+}

@@ -1,0 +1,56 @@
+@use '../../../styles/utils/index' as u;
+
+.root{
+	flex: 1; 
+	width: 100%;
+	background-color: u.$primary-black;
+	@include u.border-radius(large);
+}
+
+.input{
+	flex: 1; 
+	width: 100%;
+	padding: u.rem(20);
+	@include u.border-radius(large);
+	background-color: transparent;
+	border: none;
+	font-size: u.rem(18);
+	color: u.$primary-white;
+
+	&:hover{
+		background-color: u.$transparant-black;
+	}
+}
+
+.input-with-select-container{
+	width: 100%;
+	position: relative;
+}
+
+.select-items-container{
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+	top: u.rem(70);
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: u.rem(5);
+	box-shadow: 0 0 u.rem(20) rgba(0, 0, 0, 1);
+	max-height: u.rem(400);
+	overflow: hidden;
+	background: linear-gradient(135deg, u.$primary-black 0%, u.$primary-grey 100%);
+	@include u.border-radius(default);
+}
+
+.hide{
+	display: none;
+}
+
+.select-items-scoll-container{
+	overflow: auto;
+	padding: u.rem(10);
+
+	@include u.scrollbar();
+}

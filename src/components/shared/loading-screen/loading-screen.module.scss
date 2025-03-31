@@ -1,0 +1,22 @@
+@use '../../../styles/utils/index' as u;
+
+.loading-screen-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: u.rem(50);
+}
+
+.spinner {
+	width: u.rem(50);
+	height: u.rem(50);
+	border: u.rem(5) solid u.$primary-black;
+	border-top-color: u.$primary-green;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

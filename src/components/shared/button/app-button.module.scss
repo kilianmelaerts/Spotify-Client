@@ -1,0 +1,24 @@
+@use '../../../styles/utils/index' as u;
+
+.root{
+	padding: u.rem(10);
+	transition: transform 0.1s ease-in-out;
+	@include u.border-radius(large);
+	
+	&:hover{
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+}
+
+.green{
+	color: u.$primary-white;
+	border: solid u.$primary-green;
+	background-color: u.$primary-green;
+}
+
+.transparant{
+	color: u.$primary-white;
+	border: none;
+	background-color: transparent;
+}
